@@ -46,9 +46,9 @@ bestaudio.download(filepath=audio_file)
 # Convert the downloaded audio to MP3 format
 audio = AudioSegment.from_file(audio_file, format="m4a")
 mp3_file = f"{valid_filename}.mp3"
-audio.export(mp3_file, format="mp3")
+audio.export(mp3_file, format="mp3", bitrate="192k")
 
 # Clean up the intermediate files
 os.remove(audio_file)
 
-print(f"Video converted to {mp3_file}")
+print(f"Video converted to {mp3_file} (192kbps)")
